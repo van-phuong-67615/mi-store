@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+:root {
+  --background: 0 0% 0%;
+  --foreground: 0 0% 100%;
+
+  /* dùng đúng màu brand */
+  --primary: 46.82 100% 50%; /* #ffc700 */
+  --primary-foreground: 0 0% 12.16%; /* #1F1F1F */
+
+  --secondary: 226.15 8.61% 29.61%; /* #454852 */
+  --secondary-foreground: 0 0% 82.35%; /* #ffffff */
+
+  --accent: 46.82 100% 50%;
+  --muted: 0 0% 30%;
+  --muted-foreground: 0 0% 75%;
+  --border: 0 0% 20%;
+  --radius: 0.5rem;
+}
+
+@theme inline {
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-border: hsl(var(--border));
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+}
+
+@theme {
+  /* Primary scale */
+  --color-primary-100: #fff3d5;
+  --color-primary-200: #ffe8ab;
+  --color-primary-300: #ffdd80;
+  --color-primary-400: #ffd252;
+  --color-primary-500: #ffc700; /* main */
+  --color-primary-600: #c79b12;
+  --color-primary-700: #917217;
+  --color-primary-800: #604b16;
+  --color-primary-900: #322811;
+
+  /* Secondary scale */
+  --color-secondary-100: #d7d7da;
+  --color-secondary-200: #b0b1b6;
+  --color-secondary-300: #8b8c93;
+  --color-secondary-400: #676972;
+  --color-secondary-500: #454852; /* main */
+  --color-secondary-600: #383a42;
+  --color-secondary-700: #2b2d32;
+  --color-secondary-800: #1f2023;
+  --color-secondary-900: #131415;
+
+  /* Neutral scale */
+  --color-neutral-0: #ffffff;
+  --color-neutral-100: #f0f0f0;
+  --color-neutral-200: #d2d2d2;
+  --color-neutral-300: #b1b1b1;
+  --color-neutral-400: #929292;
+  --color-neutral-500: #5d5d5d;
+  --color-neutral-600: #353535;
+  --color-neutral-700: #2c2c2c;
+  --color-neutral-800: #252525;
+  --color-neutral-900: #1f1f1f;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-primary text-primary-foreground font-black italic rounded-full cursor-pointer hover:bg-primary-600 transition-all;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 border border-primary text-neutral-200 font-black italic rounded-full cursor-pointer hover:border-primary-200 transition-all;
+  }
+
+  .section-title {
+    @apply text-2xl md:text-4xl font-black italic text-primary;
+  }
+
+  .gradient-text {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary to-primary;
+  }
+  .nav-active {
+    @apply text-primary bg-secondary-600;
+  }
+}

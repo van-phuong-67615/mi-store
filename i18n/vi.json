@@ -1,0 +1,55 @@
+{
+  "common.storeName": "XIAOMI",
+  "common.tagline": "Thiết bị thông minh & điện tử cao cấp",
+
+  "header.nav.home": "TRANG CHỦ",
+  "header.nav.products": "SẢN PHẨM",
+  "header.nav.contact": "LIÊN HỆ",
+  "header.nav.price": "GIÁ",
+  "header.signUp": "ĐĂNG KÝ",
+  "header.logIn": "ĐĂNG NHẬP",
+
+  "hero.eyebrow": "XEM HÌNH ẢNH TUYỆT ĐẠI",
+  "hero.title": "Dòng XIAOMI TV Max",
+  "hero.subtitle": "Xem hình ảnh tuyệt đại",
+  "hero.showcase": "Giới thiệu Dòng XIAOMI TV Max",
+
+  "section.topSelling.title": "SẢN PHẨM BÁN CHẠY NHẤT",
+  "section.topSelling.no": "STT",
+  "section.topSelling.products": "SẢN PHẨM",
+  "section.topSelling.quantity": "SỐ LƯỢNG",
+  "section.topSelling.price": "GIÁ",
+
+  "section.topProducts.title": "SẢN PHẨM NỔI BẬT",
+
+  "section.blackFriday.title": "BLACK FRIDAY",
+  "section.blackFriday.brand": "HISENSE",
+  "section.blackFriday.product": "E7 PRO OLED",
+  "section.blackFriday.description": "Chuẩn bị cho trải nghiệm xem tuyệt tối ưu",
+  "section.blackFriday.cta": "KHÁM PHÁ",
+
+  "section.newProducts.title": "SẢN PHẨM MỚI",
+  "section.newProducts.brand": "SONY",
+  "section.newProducts.collection": "Bộ sưu tập mới 2025",
+
+  "section.sales.title": "KHUYẾN MãI",
+  "section.sales.discount": "GIẢM 50%",
+  "section.sales.note": "Chỉ có thời hạn",
+
+  "footer.about": "VỀ CHÚNG TÔI",
+  "footer.aboutLinks": "Chi tiết công ty,Điều khoản & Điều kiện,Chính sách bảo mật,Liên kết",
+  "footer.products": "SẢN PHẨM CỦA CHÚNG TÔI",
+  "footer.productsLinks": "Sản phẩm,Liên hệ,Giá,Bán hàng",
+  "footer.help": "HỖ TRỢ",
+  "footer.helpLinks": "Các câu hỏi thường gặp (FAQ),Chính sách AML/KYC,Chính sách hoàn tiền,Giải quyết tranh chấp",
+  "footer.contact": "LIÊN HỆ CHÚNG TÔI",
+  "footer.contactLinks": "support@xiaomi.email,affiliate@xiaomi.com",
+  "footer.warranty": "Đối với các mô hình điện thoại thông minh Xiaomi được chỉ định, bạn có thể tận hưởng dịch vụ bảo hành cho thiết bị của mình tại các cửa hàng Xiaomi được chỉ định.",
+  "footer.warranty2": "Khách hàng nên cung cấp hóa đơn mua hàng hợp lệ và thẻ bảo hành. Sau khi được kiểm tra bởi trung tâm dịch vụ ủy quyền Xiaomi và xác nhận rằng điện thoại thông minh đáp ứng các điều kiện bảo hành, bạn có thể tận hưởng dịch vụ bảo hành miễn phí. Các quy tắc xác định bảo hành tùy thuộc vào trung tâm dịch vụ địa phương.",
+  "footer.installApp": "Cài đặt ứng dụng",
+  "footer.copyright": "© Bản quyền 2025. Tất cả quyền được bảo lưu",
+
+  "modal.title": "Dòng XIAOMI TV Max",
+  "modal.subtitle": "Xem hình ảnh tuyệt đại",
+  "modal.cta": "XEM THÊM"
+}

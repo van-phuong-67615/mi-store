@@ -1,0 +1,55 @@
+{
+  "common.storeName": "XIAOMI",
+  "common.tagline": "Premium Electronics & Smart Devices",
+
+  "header.nav.home": "HOME",
+  "header.nav.products": "PRODUCT",
+  "header.nav.contact": "CONTACT",
+  "header.nav.price": "PRICE",
+  "header.signUp": "SIGN UP",
+  "header.logIn": "LOG IN",
+
+  "hero.eyebrow": "VIEW TO THE MAX",
+  "hero.title": "XIAOMI TV Max Series",
+  "hero.subtitle": "View to the max",
+  "hero.showcase": "XIAOMI TV Max Series Showcase",
+
+  "section.topSelling.title": "TOP BEST-SELLING PRODUCTS",
+  "section.topSelling.no": "NO.",
+  "section.topSelling.products": "PRODUCTS",
+  "section.topSelling.quantity": "QUANTITY",
+  "section.topSelling.price": "PRICE",
+
+  "section.topProducts.title": "TOP PRODUCTS",
+
+  "section.blackFriday.title": "BLACK FRIDAY",
+  "section.blackFriday.brand": "HISENSE",
+  "section.blackFriday.product": "E7 PRO OLED",
+  "section.blackFriday.description": "Get ready for the ultimate viewing experience",
+  "section.blackFriday.cta": "EXPLORE",
+
+  "section.newProducts.title": "NEW PRODUCTS",
+  "section.newProducts.brand": "SONY",
+  "section.newProducts.collection": "New Collection 2025",
+
+  "section.sales.title": "SALES",
+  "section.sales.discount": "50% OFF",
+  "section.sales.note": "Limited Time Only",
+
+  "footer.about": "ABOUT US",
+  "footer.aboutLinks": "Company Details,Terms & Conditions,Privacy Policy,Affiliate",
+  "footer.products": "OUR PRODUCTS",
+  "footer.productsLinks": "Product,Contact,Price,Sales",
+  "footer.help": "HELP",
+  "footer.helpLinks": "F.A.Q (Frequently Asked Questions),AML/KYC Policy,Refund Policy,Dispute Resolution",
+  "footer.contact": "CONTACT US",
+  "footer.contactLinks": "support@xiaomi.email,affiliate@xiaomi.com",
+  "footer.warranty": "For designated models of Xiaomi smartphone, you can enjoy the warranty services for your device at designated Xiaomi.",
+  "footer.warranty2": "Customers should provide a valid purchase proof and warranty card. After inspected by the Xiaomi authorized service center and confirmed that the smartphone meets warranty conditions, you can enjoy the in-warranty service for free. Warranty determination rules are subject to the local service center.",
+  "footer.installApp": "Install App",
+  "footer.copyright": "© Copyright 2025. All Rights Reserved",
+
+  "modal.title": "XIAOMI TV Max Series",
+  "modal.subtitle": "View to the max",
+  "modal.cta": "SEE MORE"
+}
