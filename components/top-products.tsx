@@ -1,57 +1,93 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
-import { useTranslation } from '@/i18n/use-translation'
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import { useTranslation } from "@/i18n/use-translation";
+import Image from "next/image";
+
+const TOP_PRODUCTS = [
+  { id: 1, title: "Haier MEMC", image: "/images/top-product-1.png" },
+  {
+    id: 2,
+    title: "Google TV Endless Color",
+    image: "/images/top-product-2.png",
+  },
+  { id: 3, title: "SPJ Smart Visual", image: "/images/top-product-3.png" },
+  { id: 4, title: 'Smart TV 32"', image: "/images/top-product-4.png" },
+  { id: 5, title: "Big Screen Bigger Eid", image: "/images/top-product-5.png" },
+  { id: 6, title: "Ultra Clear TV", image: "/images/top-product-6.png" },
+  { id: 7, title: "Haier MEMC", image: "/images/top-product-1.png" },
+  {
+    id: 8,
+    title: "Google TV Endless Color",
+    image: "/images/top-product-2.png",
+  },
+  { id: 9, title: "SPJ Smart Visual", image: "/images/top-product-3.png" },
+  { id: 10, title: 'Smart TV 32"', image: "/images/top-product-4.png" },
+  {
+    id: 11,
+    title: "Big Screen Bigger Eid",
+    image: "/images/top-product-5.png",
+  },
+  { id: 12, title: "Ultra Clear TV", image: "/images/top-product-6.png" },
+];
 
 export default function TopProducts() {
-  const [scrollPosition, setScrollPosition] = useState(0)
-  const { t } = useTranslation()
-
-  const products = [
-    { id: 1, name: 'Product 1', category: 'Helen' },
-    { id: 2, name: 'Product 2', category: 'Helen' },
-    { id: 3, name: 'Product 3', category: 'Helen' },
-    { id: 4, name: 'Product 4', category: 'Helen' },
-    { id: 5, name: 'Product 5', category: 'Helen' },
-    { id: 6, name: 'Product 6', category: 'Helen' },
-  ]
-
+  const { t } = useTranslation();
   return (
-    <section className="py-16 md:py-24 bg-black">
-      <div className="max-w-7xl mx-auto px-4">
-        <h2 className="section-title mb-8">{t('section.topProducts.title')}</h2>
+    <section className=" mb-16 md:mb-20">
+      <div className="mx-auto container px-4">
+        {/* Header */}
+        <div className="mb-2 flex items-center justify-between gap-4">
+          <h3 className="uppercase text-primary">
+            {t("section.topProducts.title")}
+          </h3>
 
-        {/* Carousel */}
-        <div className="relative">
-          <div className="overflow-x-auto scrollbar-hide">
-            <div className="flex gap-4 md:gap-6 pb-4">
-              {products.map((product) => (
-                <div
-                  key={product.id}
-                  className="flex-shrink-0 w-48 md:w-64 bg-gradient-to-b from-gray-800 to-gray-900 rounded-lg overflow-hidden group cursor-pointer"
-                >
-                  <div className="h-48 md:h-64 bg-gradient-to-br from-purple-500 to-blue-600 flex items-center justify-center">
-                    <div className="text-white text-4xl font-black opacity-20">◆</div>
-                  </div>
-                  <div className="p-4">
-                    <p className="text-gray-400 text-xs mb-1">{product.category}</p>
-                    <p className="text-white font-semibold text-sm">{product.name}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+          {/* Nav buttons */}
+          <div className="flex items-center gap-2">
+            <button
+              className="top-products-prev inline-flex h-10 w-10 items-center justify-center rounded-md bg-secondary-600 text-white hover:bg-[#363941] cursor-pointer"
+              aria-label="Previous"
+            >
+              <span className="material-icons text-base">chevron_left</span>
+            </button>
+            <button
+              className="top-products-next inline-flex h-10 w-10 items-center justify-center rounded-md bg-secondary-600 text-white hover:bg-[#363941] cursor-pointer"
+              aria-label="Next"
+            >
+              <span className="material-icons text-base">chevron_right</span>
+            </button>
           </div>
-
-          {/* Navigation Buttons */}
-          <button className="absolute right-0 top-1/2 -translate-y-1/2 bg-gray-700 hover:bg-gray-600 p-2 rounded-full hidden md:flex items-center justify-center">
-            <ChevronRight size={20} className="text-white" />
-          </button>
-          <button className="absolute left-0 top-1/2 -translate-y-1/2 bg-gray-700 hover:bg-gray-600 p-2 rounded-full hidden md:flex items-center justify-center z-10">
-            <ChevronLeft size={20} className="text-white" />
-          </button>
         </div>
+
+        {/* Slider */}
+        <Swiper
+          modules={[Navigation]}
+          navigation={{
+            prevEl: ".top-products-prev",
+            nextEl: ".top-products-next",
+          }}
+          slidesPerView={5.8} // intentionally fractional
+          spaceBetween={16}
+          grabCursor
+          loop
+        >
+          {TOP_PRODUCTS.map((item) => (
+            <SwiperSlide key={item.id} className="">
+              <div className="group relative overflow-hidden rounded-lg aspect-36/49">
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                  className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                />
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </section>
-  )
+  );
 }

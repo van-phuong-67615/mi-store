@@ -1,33 +1,42 @@
-'use client'
+"use client";
 
-import { useTranslation } from '@/i18n/use-translation'
+import { ChangeEvent } from "react";
+import { useTranslation } from "@/i18n/use-translation";
 
 export default function LanguageSwitcher() {
-  const { lang, setLang } = useTranslation()
+  const { lang, setLang } = useTranslation();
 
-  const isActive = (code: 'en' | 'vi') =>
-    lang === code ? 'font-semibold text-white' : 'text-gray-400'
-
-  const baseBtn =
-    'px-2 text-xs uppercase tracking-wide transition-colors hover:text-white'
+  const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    const value = e.target.value as "en" | "vi";
+    setLang(value);
+  };
 
   return (
-    <div className="flex items-center gap-1">
-      <button
-        type="button"
-        className={`${baseBtn} ${isActive('en')}`}
-        onClick={() => setLang('en')}
+    <div className="relative inline-flex items-center">
+      <select
+        value={lang}
+        onChange={handleChange}
+        className="
+          appearance-none
+          pl-4 pr-8
+          py-2
+          text-[11px]
+          font-semibold
+          tracking-[0.2em]
+          uppercase
+          text-white
+          focus:outline-none
+          cursor-pointer
+        "
       >
-        EN
-      </button>
-      <span className="text-gray-500">/</span>
-      <button
-        type="button"
-        className={`${baseBtn} ${isActive('vi')}`}
-        onClick={() => setLang('vi')}
-      >
-        VI
-      </button>
+        <option className="text-primary" value="en">ENG</option>
+        <option className="text-primary" value="vi">VI</option>
+      </select>
+
+      {/* icon mũi tên material-icons */}
+      <span className="pointer-events-none material-icons absolute right-3 text-sm text-natural-100">
+        arrow_drop_down
+      </span>
     </div>
-  )
+  );
 }

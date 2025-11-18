@@ -1,99 +1,154 @@
-'use client'
+"use client";
 
-import { useTranslation } from '@/i18n/use-translation'
+import { useTranslation } from "@/i18n/use-translation";
+import { Barlow_Semi_Condensed } from "next/font/google";
+import Image from "next/image";
+
+const barlow = Barlow_Semi_Condensed({
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+});
 
 export default function TopSellingProducts() {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
 
   const products = [
     {
       id: 1,
-      name: 'XIAOMI MAX 24',
-      quantity: '1,424,042',
-      price: '₹7,090,099',
-      icon: '①',
+      name: "XIAOMI MAX 24",
+      quantity: "1,424,042",
+      price: "$7,090,099",
     },
     {
       id: 2,
-      name: 'XIAOMI MAX 24',
-      quantity: '1,424,042',
-      price: '₹7,090,099',
-      icon: '②',
+      name: "XIAOMI MAX 24",
+      quantity: "1,424,042",
+      price: "$7,090,099",
     },
     {
       id: 3,
-      name: 'XIAOMI MAX 24',
-      quantity: '1,424,042',
-      price: '₹7,090,099',
-      icon: '③',
+      name: "XIAOMI MAX 24",
+      quantity: "1,424,042",
+      price: "$7,090,099",
     },
     {
       id: 4,
-      name: 'XIAOMI MAX 24',
-      quantity: '1,424,042',
-      price: '₹7,090,099',
-      icon: '⚡',
+      name: "XIAOMI MAX 24",
+      quantity: "1,424,042",
+      price: "$7,090,099",
     },
     {
       id: 5,
-      name: 'XIAOMI MAX 24',
-      quantity: '1,424,042',
-      price: '₹7,090,099',
-      icon: '⑤',
+      name: "XIAOMI MAX 24",
+      quantity: "1,424,042",
+      price: "$7,090,099",
     },
-  ]
+    {
+      id: 6,
+      name: "XIAOMI MAX 24",
+      quantity: "1,424,042",
+      price: "$7,090,099",
+    },
+    {
+      id: 7,
+      name: "XIAOMI MAX 24",
+      quantity: "1,424,042",
+      price: "$7,090,099",
+    },
+    {
+      id: 8,
+      name: "XIAOMI MAX 24",
+      quantity: "1,424,042",
+      price: "$7,090,099",
+    },
+    {
+      id: 9,
+      name: "XIAOMI MAX 24",
+      quantity: "1,424,042",
+      price: "$7,090,099",
+    },
+  ];
 
   return (
-    <section className="py-16 md:py-24 bg-black">
-      <div className="max-w-7xl mx-auto px-4">
-        <h2 className="section-title mb-12">{t('section.topSelling.title')}</h2>
+    <section className="mb-16 md:mb-20">
+      <div className="container mx-auto px-4">
+        <h3 className=" mb-2 bg-gradient text-center">
+          {t("section.topSelling.title")}
+        </h3>
 
         {/* Table - Desktop */}
-        <div className="hidden md:block overflow-x-auto">
-          <table className="w-full">
+        <div className="overflow-x-auto max-h-[465px] scrollbar-xiaomi">
+          <table className="w-full border-separate border-spacing-y-2">
             <thead>
-              <tr className="border-b border-gray-700">
-                <th className="text-left py-4 px-4 text-gray-400 font-semibold text-sm">{t('section.topSelling.no')}</th>
-                <th className="text-left py-4 px-4 text-gray-400 font-semibold text-sm">{t('section.topSelling.products')}</th>
-                <th className="text-left py-4 px-4 text-gray-400 font-semibold text-sm">{t('section.topSelling.quantity')}</th>
-                <th className="text-left py-4 px-4 text-gray-400 font-semibold text-sm">{t('section.topSelling.price')}</th>
+              <tr>
+                <th className="t-header">{t("section.topSelling.no")}</th>
+                <th className="t-header">{t("section.topSelling.products")}</th>
+                <th className="t-header">{t("section.topSelling.quantity")}</th>
+                <th className="t-header text-right">
+                  {t("section.topSelling.price")}
+                </th>
               </tr>
             </thead>
-            <tbody>
-              {products.map((product, index) => (
-                <tr key={product.id} className="border-b border-gray-800 hover:bg-gray-900/50">
-                  <td className="py-6 px-4">
-                    <div className="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center text-black font-black">
-                      {product.icon}
-                    </div>
-                  </td>
-                  <td className="py-6 px-4 text-white font-semibold">{product.name}</td>
-                  <td className="py-6 px-4 text-gray-300">{product.quantity}</td>
-                  <td className="py-6 px-4 text-yellow-400 font-black">{product.price}</td>
-                </tr>
-              ))}
+            <tbody className="border-separate border-spacing-y-3.5">
+              {products.map((product, index) => {
+                let rankClass;
+                let rankIcon;
+                switch (index) {
+                  case 0:
+                    rankClass = "bg-rank-1";
+                    rankIcon = "/images/rank1.png";
+                    break;
+                  case 1:
+                    rankClass = "bg-rank-2";
+                    rankIcon = "/images/rank2.png";
+                    break;
+                  case 2:
+                    rankClass = "bg-rank-3";
+                    rankIcon = "/images/rank3.png";
+                    break;
+                  default:
+                    rankClass = "bg-rank";
+                }
+                return (
+                  <tr
+                    key={product.id}
+                    className={`${rankClass} hover:bg-gray-900/50 transition-all row-rounded`}
+                  >
+                    <td className="py-4.5 px-6">
+                      {rankIcon ? (
+                        <Image
+                          src={rankIcon}
+                          width={40}
+                          height={40}
+                          alt="rank-img"
+                        />
+                      ) : (
+                        <div
+                          className={`${barlow.className} text-[32px] font-black leading-12 italic w-10 h-10 text-center `}
+                        >
+                          {index + 1}
+                        </div>
+                      )}
+                    </td>
+                    <td className="py-4 px-6 text-neutral-100 font-black leading-6 italic">
+                      {product.name}
+                    </td>
+                    <td className="py-4 px-6 text-neutral-100 font-black leading-6 italic">
+                      {product.quantity}
+                    </td>
+                    <td className="py-4 px-6">
+                      <div className="bg-secondary-900 py-2 px-4 rounded-2xl text-primary font-black italic w-max ml-auto">
+                        {product.price}
+                      </div>
+                    </td>
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
         </div>
-
-        {/* Mobile Cards */}
-        <div className="md:hidden space-y-4">
-          {products.map((product) => (
-            <div key={product.id} className="bg-gray-900 p-4 rounded-lg flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center text-black font-black text-xs">
-                  {product.icon}
-                </div>
-                <div>
-                  <p className="text-white font-semibold text-sm">{product.name}</p>
-                  <p className="text-gray-400 text-xs">{product.quantity}</p>
-                </div>
-              </div>
-              <p className="text-yellow-400 font-black">{product.price}</p>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
-  )
+  );
 }

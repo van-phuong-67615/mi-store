@@ -1,36 +1,71 @@
-'use client'
+"use client";
 
-import { useTranslation } from '@/i18n/use-translation'
+import { useTranslation } from "@/i18n/use-translation";
+import Image from "next/image";
+import { Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+const TOP_PRODUCTS = [
+  { id: 1, title: "Haier MEMC", image: "/images/black-fri-day.png" },
+  {
+    id: 2,
+    title: "Google TV Endless Color",
+    image: "/images/black-fri-day.png",
+  },
+];
 
 export default function BlackFriday() {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
 
   return (
-    <section className="py-16 md:py-24 bg-black">
-      <div className="max-w-7xl mx-auto px-4">
-        <h2 className="section-title mb-8">{t('section.blackFriday.title')}</h2>
+    <div className="max-w-[60%]">
+      <div className="mb-2 flex items-center justify-between gap-4">
+        <h3 className="uppercase text-primary">
+          {t("section.blackFriday.title")}
+        </h3>
 
-        {/* Featured Banner */}
-        <div className="bg-gradient-to-r from-purple-900 to-blue-900 rounded-lg overflow-hidden p-8 md:p-12 flex flex-col md:flex-row items-center gap-8">
-          <div className="flex-1">
-            <p className="text-yellow-400 font-black italic text-sm mb-2">
-              {t('section.blackFriday.brand')}
-            </p>
-            <h3 className="text-3xl md:text-5xl font-black text-white mb-4">
-              {t('section.blackFriday.product')}
-            </h3>
-            <p className="text-gray-300 mb-6">
-              {t('section.blackFriday.description')}
-            </p>
-            <button className="btn-primary">{t('section.blackFriday.cta')}</button>
-          </div>
-
-          {/* Image Area */}
-          <div className="flex-1 h-48 md:h-64 bg-gradient-to-br from-purple-800 to-black rounded flex items-center justify-center">
-            <div className="text-6xl font-black text-purple-400 opacity-30">◆</div>
-          </div>
+        {/* Nav buttons */}
+        <div className="flex items-center gap-2">
+          <button
+            className="bl-fr-prev inline-flex h-10 w-10 items-center justify-center rounded-md bg-secondary-600 text-white hover:bg-[#363941] cursor-pointer"
+            aria-label="Previous"
+          >
+            <span className="material-icons text-base">chevron_left</span>
+          </button>
+          <button
+            className="bl-fr-next inline-flex h-10 w-10 items-center justify-center rounded-md bg-secondary-600 text-white hover:bg-[#363941] cursor-pointer"
+            aria-label="Next"
+          >
+            <span className="material-icons text-base">chevron_right</span>
+          </button>
         </div>
       </div>
-    </section>
-  )
+
+      {/* Featured Banner */}
+      <Swiper
+        modules={[Navigation]}
+        navigation={{
+          prevEl: ".bl-fr-prev",
+          nextEl: ".bl-fr-next",
+        }}
+        slidesPerView={1} // intentionally fractional
+        grabCursor
+        loop
+        className="max-w-full"
+      >
+        {TOP_PRODUCTS.map((item) => (
+          <SwiperSlide key={item.id} className="">
+            <div className="group relative overflow-hidden rounded-lg aspect-5/2">
+              <Image
+                src={item.image}
+                alt={item.title}
+                fill
+                className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+              />
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
+  );
 }

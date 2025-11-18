@@ -1589,6 +1589,11 @@ magic-string@^0.30.21:
   dependencies:
     "@jridgewell/sourcemap-codec" "^1.5.5"
 
+material-icons@^1.13.14:
+  version "1.13.14"
+  resolved "https://registry.yarnpkg.com/material-icons/-/material-icons-1.13.14.tgz#65ae8693550b9f789036bd4cf29e775f1bd389ed"
+  integrity sha512-kZOfc7xCC0rAT8Q3DQixYAeT+tBqZnxkseQtp2bxBxz7q5pMAC+wmit7vJn1g/l7wRU+HEPq23gER4iPjGs5Cg==
+
 nanoid@^3.3.11, nanoid@^3.3.6:
   version "3.3.11"
   resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.3.11.tgz#4f4f112cefbe303202f2199838128936266d185b"
@@ -1845,6 +1850,11 @@ styled-jsx@5.1.6:
   integrity sha512-qSVyDTeMotdvQYoHWLNGwRFJHC+i+ZvdBRYosOFgC+Wg1vx4frN2/RG/NA7SYqqvKNLf39P2LSRA2pu6n0XYZA==
   dependencies:
     client-only "0.0.1"
+
+swiper@^12.0.3:
+  version "12.0.3"
+  resolved "https://registry.yarnpkg.com/swiper/-/swiper-12.0.3.tgz#c7804fd39955189d3ec652d9832896bd3d04733e"
+  integrity sha512-BHd6U1VPEIksrXlyXjMmRWO0onmdNPaTAFduzqR3pgjvi7KfmUCAm/0cj49u2D7B0zNjMw02TSeXfinC1hDCXg==
 
 tailwind-merge@^2.5.5:
   version "2.6.0"

@@ -29,8 +29,8 @@ export default function Header() {
   ];
 
   return (
-    <header className="bg-black border-b border-gray-800 sticky top-0 z-40">
-      <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+    <header className="bg-secondary-900 sticky top-0 z-40">
+      <div className="container mx-auto px-4 py-5 flex items-center justify-between">
         <div className="flex items-center gap-10">
           {/* Logo */}
           <div className="flex items-center gap-2">
@@ -43,7 +43,7 @@ export default function Header() {
               <Link
                 key={item.key}
                 href="#"
-                className={`text-sm py-2 px-5 rounded-full hover:text-primary hover:bg-secondary-600 transition-all ${
+                className={`text-sm py-2.5 px-5 rounded-full hover:text-primary hover:bg-secondary-600 transition-all ${
                   item.path === pathname ? "nav-active" : "text-neutral-200"
                 }`}
               >

@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import "material-icons/iconfont/material-icons.css";
 import { LanguageProvider } from "@/i18n/language-provider";
+import Header from "@/components/header";
+import Footer from "@/components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,8 +22,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.className} bg-black text-white`}>
-        <LanguageProvider>{children}</LanguageProvider>
+      <body className={`${inter.className} bg-secondary-900 text-white`}>
+        <LanguageProvider>
+          <main>
+            <Header />
+            {children}
+            <Footer />
+          </main>
+        </LanguageProvider>
       </body>
     </html>
   );
