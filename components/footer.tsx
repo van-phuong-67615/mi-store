@@ -2,6 +2,8 @@
 
 import { Mail, Shield } from "lucide-react";
 import { useTranslation } from "@/i18n/use-translation";
+import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   const { t } = useTranslation();
@@ -12,13 +14,14 @@ export default function Footer() {
       links: t("footer.aboutLinks").split(","),
     },
     {
-      title: t("footer.products"),
-      links: t("footer.productsLinks").split(","),
-    },
-    {
       title: t("footer.help"),
       links: t("footer.helpLinks").split(","),
     },
+    {
+      title: t("footer.products"),
+      links: t("footer.productsLinks").split(","),
+    },
+
     {
       title: t("footer.contact"),
       links: t("footer.contactLinks").split(","),
@@ -38,45 +41,59 @@ export default function Footer() {
               <ul className="space-y-2">
                 {section.links.map((link) => (
                   <li key={link.trim()}>
-                    <a
+                    <Link
                       href="#"
-                      className="text-gray-400 text-sm hover:text-yellow-400 transition-colors"
+                      className="text-neutral-200 text-sm hover:text-primary transition-colors"
                     >
                       {link.trim()}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
+              {section.title === t("footer.contact") && (
+                <Link href={"#"} className="mt-6 block">
+                  <Image
+                    src="/images/installapp.png"
+                    width={150}
+                    height={44}
+                    alt="install app"
+                  ></Image>
+                </Link>
+              )}
             </div>
           ))}
         </div>
 
         {/* Security & Downloads */}
-        <div className="py-8 border-t border-gray-800 space-y-6">
-          <div className="flex items-center gap-4 text-sm text-gray-400">
-            <Shield size={16} />
-            <span>{t("footer.warranty")}</span>
+        <div className="py-10 space-y-10">
+          <div className="flex items-center gap-4 text-sm text-neutral-200">
+            <Image
+              src="/images/18plus.png"
+              width={30}
+              height={30}
+              alt="18-plus"
+            />
+            <Image src="/images/ssl.png" width={88} height={30} alt="18-plus" />
+            <span className="pl-2">{t("footer.warranty")}</span>
           </div>
-          <div className="text-xs text-gray-500 leading-relaxed">
+          <div className="text-sm text-neutral-200 leading-5">
             {t("footer.warranty2")}
           </div>
-          <div className="bg-gray-900 px-4 py-3 rounded-lg inline-block">
-            <button className="flex items-center gap-2 text-white font-semibold text-sm hover:text-yellow-400">
-              📱 {t("footer.installApp")}
-            </button>
+          <div className="py-4 bg-secondary-800 text-sm text-center rounded-lg">
+            {t("footer.copyright")}
           </div>
         </div>
 
         {/* Bottom Section */}
-        <div className="mt-8 pt-8 border-t border-gray-800">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-4">
-            <p className="text-gray-500 text-xs">{t("footer.copyright")}</p>
-            <div className="flex gap-4">
-              <span className="text-gray-400 text-sm">💳 VISA</span>
-              <span className="text-gray-400 text-sm">🔴 Mastercard</span>
-              <span className="text-gray-400 text-sm">🔘 AstroPay</span>
-            </div>
-          </div>
+
+        <div className="flex gap-6 justify-center">
+          <span>
+            <Image src={"/images/visa.svg"} height={24} alt="visa" width={74} />
+          </span>
+          <span><Image src={"/images/mastercard.svg"} height={24} alt="visa" width={133} /></span>
+          <span><Image src={"/images/astropay.svg"} height={24} alt="visa" width={90} /></span>
+          <span><Image src={"/images/InteracLogo2.svg"} height={24} alt="visa" width={24} /></span>
+          <span><Image src={"/images/jetonbanklogo.png"} height={24} alt="visa" width={40} /></span>
         </div>
       </div>
     </footer>

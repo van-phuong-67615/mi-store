@@ -34,11 +34,18 @@ export default function Header() {
         <div className="flex items-center gap-10">
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <Image src="/images/logo.png" alt="Logo" width={138} height={40} />
+            <Link href={"/"}>
+              <Image
+                src="/images/logo.png"
+                alt="Logo"
+                width={138}
+                height={40}
+              />
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center">
             {navItems.map((item) => (
               <Link
                 key={item.key}

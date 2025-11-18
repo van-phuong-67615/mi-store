@@ -18,7 +18,7 @@ export default function BlackFriday() {
   const { t } = useTranslation();
 
   return (
-    <div className="max-w-[60%]">
+    <div>
       <div className="mb-2 flex items-center justify-between gap-4">
         <h3 className="uppercase text-primary">
           {t("section.blackFriday.title")}

@@ -9,27 +9,33 @@ export default function NewProductsSales() {
   return (
     <>
       {/* New Products */}
-      <div className="aspect-square">
+      <div>
         <h3 className="uppercase text-primary mb-2">
           {t("section.newProducts.title")}
         </h3>
-        <Image
-          src="/images/new-product.png"
-          fill
-          alt="new product"
-        />
+        <div className="aspect-square relative">
+          <Image
+            src="/images/new-product.png"
+            fill
+            alt="new product"
+            className="object-cover  transition-transform duration-300 group-hover:scale-[1.03]"
+          />
+        </div>
       </div>
 
       {/* Sales */}
-      <div className="aspect-square">
+      <div>
         <h3 className="uppercase text-primary mb-2">
           {t("section.sales.title")}
         </h3>
-        <Image
-          src="/images/sales-product.png"
-          fill
-          alt="sales product"
-        />
+        <div className="aspect-square relative">
+          <Image
+            src="/images/sales-product.png"
+            fill
+            alt="sales product"
+            className="object-cover  transition-transform duration-300 group-hover:scale-[1.03]"
+          />
+        </div>
       </div>
     </>
   );
