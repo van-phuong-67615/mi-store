@@ -12,7 +12,6 @@ export const metadata: Metadata = {
   title: "XiaoMi Store | Premium Electronics & Smart Devices",
   description:
     "Explore XiaoMi TV Max Series and other premium electronics. Top best-selling products, Black Friday deals, and exclusive sales.",
-  viewport: "width=device-width, initial-scale=1",
 };
 
 export default function RootLayout({
