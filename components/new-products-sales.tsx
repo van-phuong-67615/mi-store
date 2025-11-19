@@ -7,7 +7,7 @@ export default function NewProductsSales() {
   const { t } = useTranslation();
 
   return (
-    <>
+    <div className="grid grid-cols-2 gap-6">
       {/* New Products */}
       <div>
         <h3 className="uppercase text-primary mb-2">
@@ -37,6 +37,6 @@ export default function NewProductsSales() {
           />
         </div>
       </div>
-    </>
+    </div>
   );
 }

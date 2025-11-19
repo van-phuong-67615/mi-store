@@ -27,13 +27,13 @@ export default function BlackFriday() {
         {/* Nav buttons */}
         <div className="flex items-center gap-2">
           <button
-            className="bl-fr-prev inline-flex h-10 w-10 items-center justify-center rounded-md bg-secondary-600 text-white hover:bg-[#363941] cursor-pointer"
+            className="bl-fr-prev inline-flex  h-8 w-8 md:h-10 md:w-10 items-center justify-center rounded-md bg-secondary-600 text-white hover:bg-[#363941] cursor-pointer"
             aria-label="Previous"
           >
             <span className="material-icons text-base">chevron_left</span>
           </button>
           <button
-            className="bl-fr-next inline-flex h-10 w-10 items-center justify-center rounded-md bg-secondary-600 text-white hover:bg-[#363941] cursor-pointer"
+            className="bl-fr-next inline-flex  h-8 w-8 md:h-10 md:w-10 items-center justify-center rounded-md bg-secondary-600 text-white hover:bg-[#363941] cursor-pointer"
             aria-label="Next"
           >
             <span className="material-icons text-base">chevron_right</span>

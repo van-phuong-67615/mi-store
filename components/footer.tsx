@@ -29,10 +29,10 @@ export default function Footer() {
   ];
 
   return (
-    <footer className=" border-t border-gray-800 py-12 md:py-16">
-      <div className="container mx-auto px-4">
+    <footer className=" border-t border-secondary-600 py-10">
+      <div className="container mx-auto px-5 md:px-4">
         {/* Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:mb-[33px]">
           {footerSections.map((section) => (
             <div key={section.title}>
               <h3 className="text-white font-black text-sm mb-4">
@@ -65,28 +65,28 @@ export default function Footer() {
         </div>
 
         {/* Security & Downloads */}
-        <div className="py-10 space-y-10">
-          <div className="flex items-center gap-4 text-sm text-neutral-200">
-            <Image
+        <div className="py-5 space-y-5 md:py-10 md:space-y-10">
+          <div className="flex flex-col md:flex-row items-center gap-3 md:gap-5 text-sm text-neutral-200">
+            <div className="flex items-center gap-3"><Image
               src="/images/18plus.png"
               width={30}
               height={30}
               alt="18-plus"
             />
-            <Image src="/images/ssl.png" width={88} height={30} alt="18-plus" />
-            <span className="pl-2">{t("footer.warranty")}</span>
+            <Image src="/images/ssl.png" width={88} height={30} alt="18-plus" /></div>
+            <span className="text-xs md:text-sm text-center md:text-left">{t("footer.warranty")}</span>
           </div>
-          <div className="text-sm text-neutral-200 leading-5">
+          <div className=" text-neutral-200 leading-5 text-xs md:text-sm text-center md:text-left">
             {t("footer.warranty2")}
           </div>
-          <div className="py-4 bg-secondary-800 text-sm text-center rounded-lg">
+          <div className="py-4 bg-secondary-800 text-center rounded-lg text-xs md:text-sm">
             {t("footer.copyright")}
           </div>
         </div>
 
         {/* Bottom Section */}
 
-        <div className="flex gap-6 justify-center">
+        <div className="flex gap-6 justify-center md:flex-nowrap flex-wrap">
           <span>
             <Image src={"/images/visa.svg"} height={24} alt="visa" width={74} />
           </span>

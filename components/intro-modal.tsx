@@ -28,7 +28,7 @@ export default function IntroModal() {
 
         {/* Image Area */}
         <Image
-          src="/images/desktop_slider_mobile.jpg"
+          src="/images/welcome-popup.jpg"
           fill
           alt="intro"
           className="object-cover rounded-2xl "
@@ -42,7 +42,7 @@ export default function IntroModal() {
           </h1>
           <h2 className="text-[16px]! leading-6!">{t("hero.subtitle")}</h2>
         </div>
-        <button className="btn-primary absolute -bottom-5 left-1/2 transform -translate-x-1/2">
+        <button className="btn-primary absolute -bottom-5 left-1/2 transform -translate-x-1/2 px-8 py-2">
           {t("modal.cta")}
         </button>
       </div>

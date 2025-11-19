@@ -71,21 +71,27 @@ export default function TopSellingProducts() {
   ];
 
   return (
-    <section className="mb-16 md:mb-20">
-      <div className="container mx-auto px-4">
-        <h3 className=" mb-2 bg-gradient text-center">
+    <section className="mb-10 md:mb-20">
+      <div className="container mx-auto px-5 md:px-4">
+        <h3 className=" mb-2 bg-gradient text-center text-primary">
           {t("section.topSelling.title")}
         </h3>
 
         {/* Table - Desktop */}
-        <div className="overflow-x-auto max-h-[465px] scrollbar-xiaomi">
+        <div className="overflow-x-auto max-h-[360px] md:max-h-[465px] scrollbar-xiaomi">
           <table className="w-full border-separate border-spacing-y-2">
             <thead>
               <tr>
-                <th className="t-header">{t("section.topSelling.no")}</th>
-                <th className="t-header">{t("section.topSelling.products")}</th>
-                <th className="t-header">{t("section.topSelling.quantity")}</th>
-                <th className="t-header text-right">
+                <th className="t-header  py-1 md:py-2 pl-3 md:px-6">
+                  {t("section.topSelling.no")}
+                </th>
+                <th className="t-header  py-1 md:py-2 pl-3 md:px-6">
+                  {t("section.topSelling.products")}
+                </th>
+                <th className="t-header  py-1 md:py-2 pl-3 md:px-6">
+                  {t("section.topSelling.quantity")}
+                </th>
+                <th className="t-header  py-1 md:py-2 px-3 md:px-6 text-right">
                   {t("section.topSelling.price")}
                 </th>
               </tr>
@@ -113,32 +119,33 @@ export default function TopSellingProducts() {
                 return (
                   <tr
                     key={product.id}
-                    className={`${rankClass} hover:bg-gray-900/50 transition-all row-rounded`}
+                    className={`${rankClass} hover:bg-gray-900/50 transition-all row-rounded px-3 md:px-0`}
                   >
-                    <td className="py-4.5 px-6">
+                    <td className="py-4.5 px-3 md:px-6">
                       {rankIcon ? (
                         <Image
                           src={rankIcon}
                           width={40}
                           height={40}
                           alt="rank-img"
+                          className="w-5 h-5 md:w-10 md:h-10"
                         />
                       ) : (
                         <div
-                          className={`${barlow.className} text-[32px] font-black leading-12 italic w-10 h-10 text-center `}
+                          className={`${barlow.className} text-xl md:text-[32px] leading-5 md:leading-12 font-black  italic w-5 h-5 md:w-10 md:h-10 text-center `}
                         >
                           {index + 1}
                         </div>
                       )}
                     </td>
-                    <td className="py-4 px-6 text-neutral-100 font-black leading-6 italic">
+                    <td className="py-4 px-3 md:px-6 text-neutral-100 font-black text-[10px] md:text-base leading-6 italic">
                       {product.name}
                     </td>
-                    <td className="py-4 px-6 text-neutral-100 font-black leading-6 italic">
+                    <td className="py-4 px-3 md:px-6 text-neutral-100 font-black text-[10px] md:text-base leading-6 italic">
                       {product.quantity}
                     </td>
-                    <td className="py-4 px-6">
-                      <div className="bg-secondary-900 py-2 px-4 rounded-2xl text-primary font-black italic w-max ml-auto">
+                    <td className="py-4 px-3 md:px-6">
+                      <div className="bg-secondary-900 py-1 md:py-2 px-2 md:px-4 text-[10px] md:text-base rounded-md md:rounded-2xl text-primary font-black italic w-max ml-auto">
                         {product.price}
                       </div>
                     </td>

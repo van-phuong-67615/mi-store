@@ -37,8 +37,8 @@ const TOP_PRODUCTS = [
 export default function TopProducts() {
   const { t } = useTranslation();
   return (
-    <section className=" mb-16 md:mb-20">
-      <div className="mx-auto container px-4">
+    <section className=" mb-10 md:mb-20">
+      <div className="mx-auto container px-5 md:px-4">
         {/* Header */}
         <div className="mb-2 flex items-center justify-between gap-4">
           <h3 className="uppercase text-primary">
@@ -48,13 +48,13 @@ export default function TopProducts() {
           {/* Nav buttons */}
           <div className="flex items-center gap-2">
             <button
-              className="top-products-prev inline-flex h-10 w-10 items-center justify-center rounded-md bg-secondary-600 text-white hover:bg-[#363941] cursor-pointer"
+              className="top-products-prev inline-flex h-8 w-8 md:h-10 md:w-10 items-center justify-center rounded-md bg-secondary-600 text-white hover:bg-[#363941] cursor-pointer"
               aria-label="Previous"
             >
               <span className="material-icons text-base">chevron_left</span>
             </button>
             <button
-              className="top-products-next inline-flex h-10 w-10 items-center justify-center rounded-md bg-secondary-600 text-white hover:bg-[#363941] cursor-pointer"
+              className="top-products-next inline-flex h-8 w-8 md:h-10 md:w-10 items-center justify-center rounded-md bg-secondary-600 text-white hover:bg-[#363941] cursor-pointer"
               aria-label="Next"
             >
               <span className="material-icons text-base">chevron_right</span>
@@ -69,10 +69,16 @@ export default function TopProducts() {
             prevEl: ".top-products-prev",
             nextEl: ".top-products-next",
           }}
-          slidesPerView={5.8} // intentionally fractional
-          spaceBetween={16}
+          slidesPerView={3.3} // intentionally fractional
+          spaceBetween={8}
           grabCursor
           loop
+          breakpoints={{
+            768: {
+              slidesPerView: 5.8,
+              spaceBetween: 16,
+            }
+          }}
         >
           {TOP_PRODUCTS.map((item) => (
             <SwiperSlide key={item.id} className="">
