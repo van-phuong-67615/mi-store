@@ -9,10 +9,12 @@ Dự án này được build bằng **Next.js + TailwindCSS** dựa trên design
 ```bash
 yarn install
 yarn run dev
+```
 
 ## 2. Desktop screenshot
+
 ![Alt text](./public/screenshots/mi-store-gules.vercel.app_.png)
 
 ## 3. Mobile screenshot
+
 ![Alt text](./public/screenshots/mi-store-gules.vercel.app_mobile.png)
-```
